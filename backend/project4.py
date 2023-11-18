@@ -10,18 +10,17 @@ CORS(app)
 
 
 # load model
-loaded_rf_model = pickle.load(open('../data_processing/rf_model.pickle', "rb"))
+loaded_rf_model = pickle.load(open('../DataProcessing/rf_model.pickle', "rb"))
 
 
 @app.route("/input", methods=['POST'])
 def input():
     data = request.get_json()
     print(data)
-    result = loaded_rf_model.predict(data)
-    print(result)
     output = []
-    output.append({'predict': result})
-    return jsonify({'result': output})
+    result = loaded_rf_model.predict(data)
+    print(result[0])
+    return jsonify(data)
 
 
 if __name__ == '__main__':
