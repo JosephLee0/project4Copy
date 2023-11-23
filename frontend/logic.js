@@ -32,6 +32,26 @@ function swapMainPage(on, off) {
 
 function whichChart(genreName) {
   swapMainPage(chartDisplay, formPage);
+  //   chartDisplay.html(`<div id="text-div">
+  //   <div>
+  //     <h1>
+  //       Here is a chart of a typical ${genreName} popular and unpopular
+  //       Music.
+  //     </h1>
+  //   </div>
+  // </div>
+  // <div id="genre-pics" class="user-info-div">
+  //   <div>
+  //     <img src="chart Images/chart 1.png" alt="chart-image" />
+  //   </div>
+  //   <div>
+  //     <img src="chart Images/chart2.jpg" alt="" />
+  //   </div>
+  // </div>
+
+  // <div id="back" class="predict">
+  //   <button id="close-chart" onclick="swapMainPage(formPage, chartDisplay)">Go Back to Predict</button>
+  // </div>`);
   chartDisplay.html(`<div id="text-div">
   <div>
     <h1>
@@ -41,12 +61,9 @@ function whichChart(genreName) {
   </div>
 </div>
 <div id="genre-pics" class="user-info-div">
-  <div>
-    <img src="chart Images/chart 1.png" alt="chart-image" />
-  </div>
-  <div>
-    <img src="chart Images/chart2.jpg" alt="" />
-  </div>
+<div> 
+<iframe src="https://www.tutorialrepublic.com" height="500px;width="600px;"></iframe>
+</div>
 </div>
 
 <div id="back" class="predict">
