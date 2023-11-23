@@ -5,6 +5,7 @@ let overlay = d3.select("#overlay");
 let modal = d3.select("#modal");
 let mainPage = d3.select("#mainPage");
 let formPage = d3.select("#form-page");
+let givenName = d3.select("#givenName");
 let userInput = document.getElementById("user-info-div");
 
 let userName;
@@ -26,49 +27,36 @@ function saveName() {
 }
 
 function swapMainPage(on, off) {
+  givenName.html(`<h1>You are alomost there ${
+    userName ? userName.split(" ")[0] : "!!"
+  }</h1>
+  <h2>Fill the form to make prediction</h2>`);
   off.classed("hidden", true);
   on.classed("hidden", false);
 }
 
 function whichChart(genreName) {
   swapMainPage(chartDisplay, formPage);
-  //   chartDisplay.html(`<div id="text-div">
-  //   <div>
-  //     <h1>
-  //       Here is a chart of a typical ${genreName} popular and unpopular
-  //       Music.
-  //     </h1>
-  //   </div>
-  // </div>
-  // <div id="genre-pics" class="user-info-div">
-  //   <div>
-  //     <img src="chart Images/chart 1.png" alt="chart-image" />
-  //   </div>
-  //   <div>
-  //     <img src="chart Images/chart2.jpg" alt="" />
-  //   </div>
-  // </div>
-
-  // <div id="back" class="predict">
-  //   <button id="close-chart" onclick="swapMainPage(formPage, chartDisplay)">Go Back to Predict</button>
-  // </div>`);
   chartDisplay.html(`<div id="text-div">
-  <div>
-    <h1>
-      Here is a chart of a typical ${genreName} popular and unpopular
-      Music.
-    </h1>
+    <div>
+      <h1>
+        Here is a chart of a typical popular and unpopular ${genreName}
+        Music.
+      </h1>
+    </div>
   </div>
-</div>
-<div id="genre-pics" class="user-info-div">
-<div> 
-<iframe src="https://www.tutorialrepublic.com" height="500px;width="600px;"></iframe>
-</div>
-</div>
+  <div id="genre-pics" class="user-info-div">
+    <div>
+      <img src="chart Images/${genreName.toLowerCase()}-1.png" alt="chart-image" />
+    </div>
+    <div>
+      <img src="chart Images/${genreName.toLowerCase()}-2.png" alt="second Image" />
+    </div>
+  </div>
 
-<div id="back" class="predict">
-  <button id="close-chart" onclick="swapMainPage(formPage, chartDisplay)">Go Back to Predict</button>
-</div>`);
+  <div id="back" class="predict">
+    <button id="close-chart" onclick="swapMainPage(formPage, chartDisplay)">Go Back to Predict</button>
+  </div>`);
 }
 
 function displayResult(user, result) {
