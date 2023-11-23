@@ -17,7 +17,7 @@ function saveName() {
   <br />
   <p style="width: 80%; color: black">
     Welcome <span style="font-weight: bold">${userName}</span>, Please note that this is just a predictive
-    model with 71% accuracy. This model does not guaranteed the
+    model with 72.5% accuracy. This model does not guaranteed the
     performance of your track in real word. By clicking continue you
     agreed with the T&C of this model.
   </p>
