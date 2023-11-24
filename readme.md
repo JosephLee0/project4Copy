@@ -45,3 +45,5 @@ The overview of this project is to use machine learning to create model that can
   ![Alt text](image-3.png)
 
 * A web form is used to collect input to test our model and the result is also displayed through the same web application.Every component of the web application can be found inside the Frontend/Backend folder.
+
+* For the model to work on sklearn 1.3.2, you will need to re run our model code. The current model was build using an sklearn version prior to 1.3.0. 
